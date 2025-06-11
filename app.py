@@ -235,7 +235,7 @@ def calcular_metricas_agentes(df):
 def generar_semaforo(metricas):
     # Asignación de colores con umbrales actualizados
     metricas['color_tiempo'] = metricas['Tiempo promedio (min)'].apply(
-        lambda x: '🔴' if x > 5 else ('🟡' if x > 3 else '🟢'))
+        lambda x: '🔴' if x > 5 else ('🟡' if x > 1.5 else '🟢'))
 
     metricas['color_abiertos'] = metricas['Tickets abiertos y pendientes (%)'].apply(
         asignar_color, umbrales=(10, 20))
